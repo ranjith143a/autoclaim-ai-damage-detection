@@ -1,0 +1,163 @@
+{
+  "model_name": "Tuned XGBoost Regressor",
+  "algorithm": "XGBRegressor",
+  "hyperparameters": {
+    "subsample": 0.75,
+    "reg_lambda": 3.0,
+    "reg_alpha": 0.5,
+    "n_estimators": 250,
+    "min_child_weight": 5,
+    "max_depth": 5,
+    "learning_rate": 0.07,
+    "colsample_bytree": 1.0,
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "input_feature_columns": [
+    "vehicle_age_years",
+    "vehicle_segment",
+    "vehicle_insured_value_inr",
+    "repair_region",
+    "labor_rate_per_hour_inr",
+    "parts_price_index",
+    "policy_deductible_inr",
+    "front_bumper_cnn_probability",
+    "hood_cnn_probability",
+    "headlight_cnn_probability",
+    "front_door_cnn_probability",
+    "back_door_cnn_probability",
+    "back_bumper_cnn_probability",
+    "fender_cnn_probability",
+    "windshield_cnn_probability",
+    "front_bumper_cnn_flag",
+    "hood_cnn_flag",
+    "headlight_cnn_flag",
+    "front_door_cnn_flag",
+    "back_door_cnn_flag",
+    "back_bumper_cnn_flag",
+    "fender_cnn_flag",
+    "windshield_cnn_flag"
+  ],
+  "transformed_feature_names": [
+    "vehicle_segment_luxury",
+    "vehicle_segment_sedan",
+    "vehicle_segment_suv",
+    "repair_region_tier_2",
+    "repair_region_tier_3",
+    "vehicle_age_years",
+    "vehicle_insured_value_inr",
+    "labor_rate_per_hour_inr",
+    "parts_price_index",
+    "policy_deductible_inr",
+    "front_bumper_cnn_probability",
+    "hood_cnn_probability",
+    "headlight_cnn_probability",
+    "front_door_cnn_probability",
+    "back_door_cnn_probability",
+    "back_bumper_cnn_probability",
+    "fender_cnn_probability",
+    "windshield_cnn_probability",
+    "front_bumper_cnn_flag",
+    "hood_cnn_flag",
+    "headlight_cnn_flag",
+    "front_door_cnn_flag",
+    "back_door_cnn_flag",
+    "back_bumper_cnn_flag",
+    "fender_cnn_flag",
+    "windshield_cnn_flag"
+  ],
+  "num_features_raw": 23,
+  "num_features_transformed": 26,
+  "target_column": "claim_amount_inr",
+  "clipping_strategy": "Non-negative clipping: np.clip(pred, 0, None)",
+  "train_metrics": {
+    "MAE_INR": 8060.63,
+    "RMSE_INR": 11929.73,
+    "MSE": 142318448.0,
+    "R2_Score": 0.8793,
+    "Explained_Variance": 0.8794
+  },
+  "validation_metrics": {
+    "MAE_INR": 9380.62,
+    "RMSE_INR": 14234.82,
+    "MSE": 202630096.0,
+    "R2_Score": 0.8358,
+    "Explained_Variance": 0.8358
+  },
+  "test_metrics": {
+    "MAE_INR": 9467.96,
+    "RMSE_INR": 14468.09,
+    "MSE": 209325568.0,
+    "R2_Score": 0.8281,
+    "Explained_Variance": 0.8281
+  },
+  "training_samples": 28000,
+  "val_samples": 6000,
+  "test_samples": 6000,
+  "categorical_features": [
+    "vehicle_segment",
+    "repair_region"
+  ],
+  "top_features": [
+    {
+      "Feature": "headlight_cnn_flag",
+      "Importance": 0.2376636564731598
+    },
+    {
+      "Feature": "back_bumper_cnn_flag",
+      "Importance": 0.20155580341815948
+    },
+    {
+      "Feature": "front_door_cnn_flag",
+      "Importance": 0.13764148950576782
+    },
+    {
+      "Feature": "back_door_cnn_flag",
+      "Importance": 0.06191500648856163
+    },
+    {
+      "Feature": "hood_cnn_probability",
+      "Importance": 0.04402023181319237
+    },
+    {
+      "Feature": "vehicle_segment_luxury",
+      "Importance": 0.04319925978779793
+    },
+    {
+      "Feature": "windshield_cnn_probability",
+      "Importance": 0.0333578959107399
+    },
+    {
+      "Feature": "front_door_cnn_probability",
+      "Importance": 0.029804106801748276
+    },
+    {
+      "Feature": "windshield_cnn_flag",
+      "Importance": 0.028590083122253418
+    },
+    {
+      "Feature": "front_bumper_cnn_probability",
+      "Importance": 0.02707068994641304
+    },
+    {
+      "Feature": "vehicle_insured_value_inr",
+      "Importance": 0.026531698182225227
+    },
+    {
+      "Feature": "hood_cnn_flag",
+      "Importance": 0.021573953330516815
+    },
+    {
+      "Feature": "back_door_cnn_probability",
+      "Importance": 0.018357466906309128
+    },
+    {
+      "Feature": "back_bumper_cnn_probability",
+      "Importance": 0.017532797530293465
+    },
+    {
+      "Feature": "fender_cnn_probability",
+      "Importance": 0.015114590525627136
+    }
+  ]
+}

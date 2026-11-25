@@ -1,0 +1,74 @@
+# ==============================================================================
+# AutoClaim AI: .gitignore Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Heavy Raw Image Datasets (Total ~3 GB)
+# These should NEVER be pushed to GitHub due to file size and repository limits.
+# Download links are documented in README.md (HuggingFace datasets).
+# ------------------------------------------------------------------------------
+Car_Parts_Damage_Dataset/
+Comprehensive_Car_Damage/
+*.jpg
+*.jpeg
+*.png
+# Allow evaluation plot images inside models/
+!models/evaluation_plots/*.png
+
+# ------------------------------------------------------------------------------
+# 2. Large Pre-Trained Deep Learning Weights (>100 MB GitHub Limit)
+# Files over 100MB are strictly blocked by GitHub push operations.
+# Host large model files on GitHub Releases, HuggingFace Hub, or Google Drive.
+# ------------------------------------------------------------------------------
+model_artifacts/*.keras
+model_artifacts/*.h5
+model_artifacts/*.weights.h5
+# Keep configuration JSON files tracked in git:
+!model_artifacts/multilabel_config.json
+
+# ------------------------------------------------------------------------------
+# 3. Scratch & Duplicate Files
+# ------------------------------------------------------------------------------
+Untitled.ipynb
+Untitled1.ipynb
+/synthetic_vehicle_claims_40000.csv  # Kept inside data/synthetic_vehicle_claims_40000.csv
+*.tmp
+*.log
+
+# ------------------------------------------------------------------------------
+# 4. Python & Jupyter Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ------------------------------------------------------------------------------
+# 5. Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 6. Operating System & IDE Artifacts
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# 7. Streamlit Local Cache
+# ------------------------------------------------------------------------------
+.streamlit/secrets.toml

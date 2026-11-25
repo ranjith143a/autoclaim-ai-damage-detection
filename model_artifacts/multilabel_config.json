@@ -1,0 +1,36 @@
+{
+    "model_architecture": "ResNet50",
+    "target_components": [
+        "Front-bumper",
+        "Hood",
+        "Headlight",
+        "Front-door",
+        "Back-door",
+        "Back-bumper",
+        "Fender",
+        "Windshield"
+    ],
+    "optimal_thresholds": {
+        "Front-bumper": 0.42000000000000004,
+        "Hood": 0.6,
+        "Headlight": 0.31,
+        "Front-door": 0.63,
+        "Back-door": 0.74,
+        "Back-bumper": 0.86,
+        "Fender": 0.28,
+        "Windshield": 0.83
+    },
+    "input_size": [
+        224,
+        224,
+        3
+    ],
+    "normalization": "pixel / 255.0",
+    "test_metrics": {
+        "binary_accuracy": 0.8898648648648648,
+        "exact_match_ratio": 0.6864864864864865,
+        "macro_f1": 0.4879292993118187,
+        "micro_f1": 0.5995085995085995,
+        "mean_pr_auc": 0.46845591081933013
+    }
+}
